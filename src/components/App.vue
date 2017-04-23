@@ -19,12 +19,24 @@
             }
         },
         created(){
-            console.log( $( 'a' ) )
             console.log( queryData )
         },
         mounted(){
             $( 'a' ).on( 'click', evt => {
+
                 evt.preventDefault()
+
+                // Get json from other page
+                $.ajax( {
+
+                    url: evt.target.href,
+                    contentType: 'application/json'
+
+                } ).then( res => {
+
+                    console.log( res )
+    
+                } )
             } )
         }
     }
