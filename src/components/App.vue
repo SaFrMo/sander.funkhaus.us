@@ -7,17 +7,18 @@
 </template>
 
 <script>
-    import replaceSVGs from 'replaceSVGs'
+    /* global queryData */
+    // import replaceSVGs from 'replaceSVGs'
 
     export default {
         el: '#app',
-        data () {
+        data(){
             return {
                 query: queryData
             }
         },
-        created () {
-            console.log(queryData)
+        created(){
+            console.log( queryData )
         }
     }
 </script>

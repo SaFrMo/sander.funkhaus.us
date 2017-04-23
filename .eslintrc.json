@@ -1,8 +1,9 @@
 {
-    "extends": "standard",
+    "extends": "vue",
     "parserOptions": {
         "ecmaVersion": 6,
-        "sourceType": "module"
+        "sourceType": "module",
+        "jsx": "false"
     },
     "rules": {
         "indent"                        : ["error", 4],
