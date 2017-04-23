@@ -1,60 +1,18 @@
 {
-  "parser": "babel-eslint",
-  "env": {
-    "commonjs": true,
-    "es6": true,
-    "mocha": true,
-    "browser": true
-  },
-  "extends": "eslint:recommended",
-  "parserOptions": {
-    "ecmaVersion": 6,
-    "ecmaFeatures": {
-      "experimentalObjectRestSpread": true
+    "extends": "standard",
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module"
     },
-    "sourceType": "module"
-  },
-  "plugins": [],
-  "globals": {
-    "__dirname": true,
-    "process": true,
-    "before": true,
-    "after": true,
-    "document": true
-   },
-  "rules": {
-    "strict": 0,
-    "comma-dangle": [
-      2,
-      "never"
-    ],
-    "indent": [
-      "error",
-      4
-    ],
-    "linebreak-style": [
-      "error",
-      "unix"
-    ],
-    "no-case-declarations": "off",
-    "no-class-assign": "off",
-    "no-unused-vars": [
-      "error",
-      {
-        "vars": "all",
-        "args": "none"
-      }
-    ],
-    "quotes": [
-      "error",
-      "single",
-      {
-          "allowTemplateLiterals": true
-      }
-    ],
-    "semi": [
-      "error",
-      "never"
-    ]
-  }
+    "rules": {
+        "indent"                        : ["error", 4],
+        "space-in-parens"               : ["error", "always"],
+        "space-before-blocks"           : ["error", "never"],
+        "space-before-function-paren"   : ["error", "never"],
+        "padded-blocks"                 : "off",
+        "keyword-spacing"               : "off",
+        "quotes"                        : "off",
+        "no-new"                        : "off",
+        "one-var"                       : "off"
+    }
 }
