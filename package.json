@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "NODE_PATH=. webpack --progress --colors --watch",
-    "build": "NODE_PATH=. NODE_ENV=production webpack --compress --progress --hide-modules"
+    "build": "NODE_PATH=. NODE_ENV=production webpack --progress --hide-modules"
   },
   "author": "Funkhaus",
   "license": "ISC",

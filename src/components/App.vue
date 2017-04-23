@@ -9,6 +9,7 @@
 <script>
     /* global queryData */
     // import replaceSVGs from 'replaceSVGs'
+    import $ from 'jquery'
 
     export default {
         el: '#app',
@@ -18,7 +19,13 @@
             }
         },
         created(){
+            console.log( $( 'a' ) )
             console.log( queryData )
+        },
+        mounted(){
+            $( 'a' ).on( 'click', evt => {
+                evt.preventDefault()
+            } )
         }
     }
 </script>
