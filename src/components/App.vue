@@ -28,14 +28,14 @@
 
                 // Get json from other page
                 $.ajax( {
-
                     url: evt.target.href,
                     contentType: 'application/json'
-
-                } ).then( res => {
-
+                } )
+                .done( res => {
                     console.log( res )
-    
+                } )
+                .fail( xhr => {
+                    console.log( 'error', xhr )
                 } )
             } )
         }
