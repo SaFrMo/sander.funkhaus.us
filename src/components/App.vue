@@ -1,7 +1,8 @@
 <template>
-    <div class="main" v-html="query.data[0].post_content">
+    <div class="main">
 
-        <span v-if="!query">Error loading!</span>
+        <component v-for="(q, index) in query" :is="`${q.state}-template`" :key="index">
+        </component>
 
     </div>
 </template>
@@ -10,34 +11,38 @@
     /* global queryData */
     // import replaceSVGs from 'replaceSVGs'
     import $ from 'jquery'
+    import frontPage from './templates/front-page.vue'
 
     export default {
         el: '#app',
+        components: {
+            'front-page-template': frontPage
+        },
         data(){
             return {
                 query: queryData
             }
         },
         created(){
-            console.log( queryData )
         },
         mounted(){
-            $( 'a' ).on( 'click', evt => {
-
-                evt.preventDefault()
-
-                // Get json from other page
-                $.ajax( {
-                    url: evt.target.href,
-                    contentType: 'application/json'
-                } )
-                .done( res => {
-                    console.log( res )
-                } )
-                .fail( xhr => {
-                    console.log( 'error', xhr )
-                } )
-            } )
+    
+            // $( 'a' ).on( 'click', evt => {
+            //
+            //     evt.preventDefault()
+            //
+            //     // Get json from other page
+            //     $.ajax( {
+            //         url: evt.target.href,
+            //         contentType: 'application/json'
+            //     } )
+            //     .done( res => {
+            //         console.log( res )
+            //     } )
+            //     .fail( xhr => {
+            //         console.log( 'error', xhr )
+            //     } )
+            // } )
         }
     }
 </script>
