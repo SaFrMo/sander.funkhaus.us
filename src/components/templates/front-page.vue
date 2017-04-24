@@ -1,7 +1,10 @@
 <template>
 
-    <section class="front-page" v-html="query.post_content">
-        {{ query }}
+    <section class="front-page">
+
+        <router-link to="/about">About</router-link>
+
+        <p v-html="content"></p>
     </section>
 
 </template>
@@ -9,13 +12,9 @@
 <script>
 
 export default {
-    data(){
-        return {
-        }
-    },
     computed: {
-        query(){
-            return this.$root.query.data[0]
+        content(){
+            return this.$store.state.queryData.data[0].post_content
         }
     }
 }
